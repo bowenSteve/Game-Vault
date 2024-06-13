@@ -7,22 +7,27 @@ from helpers import (
     delete_customer,
     update_customer,
     customer_orders,
+    find_customer_name,
     create_game,
     Insert_game,
     delete_Game,
     update_Game,
     games_orders,
+    find_game_publisher,
+    find_game_name,
     list_all_games,
     create_order,
     insert_order,
     list_all_orders,
     update_order,
     delete_order,
+    find_order_id,
     create_details,
     insert_order_details,
     list_order_details,
     delete_order_detail,
-    update_Details
+    update_Details,
+    find_details_id
 )
 
 
@@ -34,19 +39,25 @@ def main():
         if choice == "0":
             game_menu()
             game_input=input("> ")
-            if game_input=="1":
+            if game_input=="0":
+                create_game()
+            elif game_input=="1":
                 list_all_games()
             elif game_input=="2":
-                Insert_game()
+                find_game_name()
             elif game_input=="3":
-                delete_Game()
+                find_game_publisher()
             elif game_input=="4":
-                update_Game()
+                Insert_game()
             elif game_input=="5":
-                games_orders()
+                delete_Game()
             elif game_input=="6":
-                game_menu()
+                update_Game()
             elif game_input=="7":
+                games_orders()
+            elif game_input=="8":
+                game_menu()
+            elif game_input=="9":
                 break
             else:
                 print("Enter a valid input")
@@ -54,19 +65,23 @@ def main():
         elif choice=="1":
             customer_menu()
             customer_input=input("> ")
-            if customer_input=="1":
+            if customer_input=="0":
+                create_customer()
+            elif customer_input=="1":
                 list_customers()
             elif customer_input=="2":
-                insert_customer()
+                find_customer_name()
             elif customer_input=="3":
-                delete_customer()
+                insert_customer()
             elif customer_input=="4":
-                update_customer()
+                delete_customer()
             elif customer_input=="5":
-                customer_orders()
+                update_customer()
             elif customer_input=="6":
-                game_menu()
+                customer_orders()
             elif customer_input=="7":
+                game_menu()
+            elif customer_input=="8":
                 break
             else:
                 print("Enter a valid input")
@@ -76,17 +91,21 @@ def main():
         elif choice == "2":
             orders_menu()
             order_input=input("> ")
-            if order_input=="1":
+            if order_input=="0":
+                create_order()
+            elif order_input=="1":
                 list_all_orders()
             elif order_input=="2":
-                insert_order()
+                find_order_id()
             elif order_input=="3":
-                update_order()
+                insert_order()
             elif order_input=="4":
-                delete_order()
+                update_order()
             elif order_input=="5":
-                game_menu()
+                delete_order()
             elif order_input=="6":
+                game_menu()
+            elif order_input=="7":
                 break
             else:
                 print("Invalid input! Try again")
@@ -94,17 +113,21 @@ def main():
         elif choice=="3":
             order_details_menu()
             detail_input=input("> ")
-            if detail_input=="1":
+            if detail_input=="0":
+                create_details()
+            elif detail_input=="1":
                 list_order_details()
             elif detail_input=="2":
-                insert_order_details()
+                find_details_id()
             elif detail_input=="3":
-                delete_order_detail()
+                insert_order_details()
             elif detail_input=="4":
-                update_Details()
+                delete_order_detail()
             elif detail_input=="5":
-                game_menu()
+                update_Details()
             elif detail_input=="6":
+                game_menu()
+            elif detail_input=="7":
                 break
             else:
                 print("Invalid input! Try again")
@@ -125,37 +148,46 @@ def menu():
     print("4. Exit")
 def game_menu():
     print("Select an option:")
-    print("1. Check all the games in store")
-    print("2. Add a new game")
-    print("3. Delete a game")
-    print("4. update a game")
-    print("5. Check all the games with their orders")
-    print("6. Back")
-    print("7. Exit")
+    print("0. Create Game")
+    print("1. View all the games in store")
+    print("2. Find a game by name")
+    print("3. Find a game by the publisher's name")
+    print("4. Add a new game")
+    print("5. Delete a game")
+    print("6. update a game")
+    print("7. View all the games with their orders")
+    print("8. Back")
+    print("9. Exit")
 def orders_menu():
     print("Select an option:")
-    print("1. Check all the orders")
-    print("2. Add a new order")
-    print("3. Modify an order")
-    print("4. Delete an order")
-    print("5. Back")
-    print("6. Exit")
-def customer_menu():
-    print("Select an Option")
-    print("1. View all the customers")
-    print("2. Add a new customer")
-    print("3. Delete a customer")
-    print("4. Update a customer")
-    print("5. View all the customers' orders")
+    print("0. Create Orders")
+    print("1. View all the orders")
+    print("2. Find an order by ID")
+    print("3. Add a new order")
+    print("4. Modify an order")
+    print("5. Delete an order")
     print("6. Back")
     print("7. Exit")
+def customer_menu():
+    print("Select an Option")
+    print("0. Create Customer")
+    print("1. View all the customers")
+    print("2. Find customer by name")
+    print("3. Add a new customer")
+    print("4. Delete a customer")
+    print("5. Update a customer")
+    print("6. View all the customers' orders")
+    print("7. Back")
+    print("8. Exit")
 def order_details_menu():
     print("Select an Option")
+    print("0. Create Order details")
     print("1. View all the order details")
-    print("2. Add a new order detail")
-    print("3. Delete an order detail")
-    print("4. Update an order detail")
-    print("5. Back")
-    print("6. Exit")
+    print("2. Find an order detail by ID")
+    print("3. Add a new order detail")
+    print("4. Delete an order detail")
+    print("5. Update an order detail")
+    print("6. Back")
+    print("7. Exit")
 if __name__ == "__main__":
     main()

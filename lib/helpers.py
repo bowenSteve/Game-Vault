@@ -33,20 +33,30 @@ def delete_customer():
         print("Customer not found")
 
 def update_customer():
-    cust_id = input("Enter the ID of the game you want to update: ")
+    cust_id = input("Enter the ID of the customer you want to update: ")
     customer = Customer.find_by_id(cust_id)
     if customer:
         new_name = input("Enter the name of the Customer: ")
-        new_email = input("Enter the Customer EMail: ")
+        new_email = input("Enter the Customer Email: ")
         customer.name = new_name
-        customer.new_email = new_email
+        customer.email = new_email
         customer.update()
         print("Customer updated successfully!")
     else:
         print("Customer not found!")
 
+
 def customer_orders():
     Customer.customer_orders()
+
+def find_customer_name():
+    name = input("Enter the customer's name to search: ")
+    customer = Customer.find_by_name(name)
+    if customer:
+        print(f"Customer: {customer}")
+    else:
+        print(f"Customer with name '{name}' not found.")
+
 
 #game_methods
 def create_game():
@@ -91,6 +101,22 @@ def games_orders():
     games = Game.games_with_orders()
     for game_order in games:
         print(game_order)
+def find_game_name():
+    name = input("Enter the Game name to search: ")
+    game = Game.find_by_name(name)
+    if game:
+        print(f"Game: {game}")
+    else:
+        print(f"Game with name '{game}' not found.")
+
+def find_game_publisher():
+    publisher = input("Enter the Publisher's name: ")
+    game = Game.find_by_publisher(publisher)
+    if game:
+        print(f"Game found: {game}")
+    else:
+        print(f"Game with publisher '{publisher}' not found.")
+
 #order_methods
 def create_order():
     Order.create_table()
@@ -106,7 +132,7 @@ def list_all_orders():
         print(order)
 
 def update_order():
-    order_id = input("Enter the ID of the game you want to update: ")
+    order_id = input("Enter the ID of the Order you want to update: ")
     order = Order.find_by_id(order_id)
     if order:
         game_ID = int(input("Enter the new game ID: "))
@@ -129,6 +155,14 @@ def delete_order():
         print("Order deleted successfully!")
     else:
         print("Order not found")
+def find_order_id():
+    order_id=int(input("Enter the id for the order: "))
+    order= Order.find_by_id(order_id)
+    if order:
+        print(f"Order: {order}")
+    else:
+        print("Order not found!")
+
 
 #order details methods:
 def create_details():
@@ -167,5 +201,13 @@ def update_Details():
         order_detail.update()
 
         print("Order detail updated successfully!")
+    else:
+        print("Order detail not found!")
+    
+def find_details_id():
+    detail_id=int(input("Enter the id for the order detail: "))
+    detail= Order_details.find_by_id(detail_id)
+    if detail:
+        print(f"Order detail: {detail}")
     else:
         print("Order detail not found!")

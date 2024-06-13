@@ -7,7 +7,10 @@ class Order_details:
         self.order_id = order_id
         self.game_id = game_id
         self.quantity = quantity
-    
+
+    def __repr__(self):
+        return f"ID {self.id}: Order ID: {self.order_id}, Game ID: {self.game_id} Quantity: {self.quantity}"
+
     def get_quantity(self):
         return self._quantity
     

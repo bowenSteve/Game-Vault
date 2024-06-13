@@ -9,7 +9,7 @@ class Game:
         self.publisher = publisher
     
     def __repr__(self):
-        return f"Game {self.id}: Name: {self.name}, Price: {self.price}, Publisher: {self.publisher}"
+        return f"Game: {self.id} Name: {self.name}, Price: {self.price}, Publisher: {self.publisher}"
     
     def get_name(self):
         return self._name
@@ -26,7 +26,6 @@ class Game:
     def set_price(self, price):
         if isinstance(price, (int, float)) and price >= 0:
             self._price = price
-            print(price)
         else:
             raise ValueError(f"Enter a valid price: {price}")
 
@@ -98,7 +97,14 @@ class Game:
             FROM games
         """
         rows = CURSOR.execute(sql).fetchall()
-        return [cls.instance_from_db(row) for row in rows]
+    
+        games = []
+        for row in rows:
+            game = cls.instance_from_db(row)
+            games.append(game)
+    
+        return games
+
 
     @classmethod
     def find_by_publisher(cls, publisher):
