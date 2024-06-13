@@ -29,7 +29,8 @@ In order to run  this application, you need to have the following installed in y
 * You will also need to have a code editor(Visual studio is highly preferred)
 
 ## Execution
-* after cloning this repository, open your terminal and run this command '$ python3 ./lib/cli.py'
+* Clone this repository, then run pipenv install followed by pipenv shell to install the dependencies 
+* Run this command '$ python3 ./lib/cli.py' to initialize the application
 * the CLI will display the application menu
 ## Implementation
 
@@ -81,8 +82,7 @@ The OrderDetails class handled the specifics of each order, such as the quantity
     * option 5: Updates an order detail
     
 ##   Conclusion
-In conclusion, the development of the Game-Vault CLI application has successfully met several learning objectives. The implementation of a Command Line Interface in Python enabled the creation of a user-friendly interaction model through structured commands and clear prompts. Applying Object-Relational Mapping (ORM) techniques facilitated seamless integration between Python classes and SQLite databases, particularly in managing data persistence and retrieval across models like Customer, Game, Order, and OrderDetails. 
-
+The implementation of a Command Line Interface in Python enabled the creation of a user-friendly interaction model through structured commands and clear prompts. Applying Object-Relational Mapping (ORM) techniques facilitated seamless integration between Python classes and SQLite databases, particularly in managing data persistence and retrieval across models like Customer, Game, Order, and OrderDetails. 
 Establishing a one-to-many relationship between classes, such as Customers to Orders, underscored the importance of relational database principles and effective data modeling. This project helped improve technical skills and supported ideas like breaking down tasks into smaller parts, protecting data inside objects, and writing code that can be used again in different parts of the software.
 
 ## Contributors
