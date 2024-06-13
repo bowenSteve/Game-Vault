@@ -35,6 +35,8 @@ You will also need to have a code editor(Visual studio is highly preferred)
 
 ## Implementation
 
+A database 'gamestore.db' is created when the create methods are first executed.
+
 Customer Class/Table:
 The Customer class represented the customers of the gaming store, encapsulating their name and email attributes. The customers table in the database stored these details with columns for id, name, and email. This class included methods for creating, reading, updating, and deleting customer records, ensuring data integrity through validations.
 
@@ -47,6 +49,29 @@ The Order class represented orders placed by customers, including attributes for
 OrderDetails Class/Table:
 The OrderDetails class handled the specifics of each order, such as the quantity of each game ordered. The order_details table in the database stored these details with columns for id, OrderID, GameID, and quantity, with foreign keys linking the details to the respective orders and games. This class provided methods to manage order detail records, ensuring that the quantity was a positive integer and maintaining the relationships between orders and games.
 
+--- From the main menu, the user is able to select an option of their liking. For the Option '0', the user able to select options which can allow them to:
+        1. Check the full list of all the games available
+        2. Add a new game to the database 
+        3. Delete a game from the store
+        4. Update a game
+        5 Check the full list of all the games along with their orders
+
+--- In the Option '1', a user can:
+        1. View the full customer list
+        2. Add a new customer
+        3. Delete a customer
+        4. Update a customer 
+        5. View the customer orders
+    in Option '2', a user can:
+        1. View all the orders
+        2. Add a new order
+        3. Modify an order
+        4. Delete an order
+    in option '3', a user can:
+        1. View all the order details
+        2. Add a new order detail
+        3. Delete an order detail
+        4. Update an order detail
 ##   Conclusion
 In conclusion, the development of the Game-Vault CLI application has successfully met several learning objectives. The implementation of a Command Line Interface in Python enabled the creation of a user-friendly interaction model through structured commands and clear prompts. Applying Object-Relational Mapping (ORM) techniques facilitated seamless integration between Python classes and SQLite databases, particularly in managing data persistence and retrieval across models like Customer, Game, Order, and OrderDetails. 
 
